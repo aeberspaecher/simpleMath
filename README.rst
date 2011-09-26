@@ -5,8 +5,9 @@ simpleMath
 About
 =====
 
-simpleMath is a LaTeX package that provides convenient math functions
-for Physicists. Eg., \ket{a} gives |a> with nicely sized bra-kets.
+simpleMath is a LaTeX package that provides convenient math
+functions for Physicists. Eg., \ket{a} gives |a> with nicely sized
+bra-kets.
 
 Options
 =======
@@ -20,10 +21,10 @@ The package knows options:
 
 - newVec (default): use bold italic letters for vectors.
 
-- oldVec:do not change standard LaTeX \vec definition.
+- oldVec: do not change standard LaTeX \vec definition.
 
 Commands
 ========
 
-At the time being, there is no typesetted list of commands. Have a
-look at the source code itself.
+At the time being, there is no typeset list of commands. Have a look
+at the source code itself.
