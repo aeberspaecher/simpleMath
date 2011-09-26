@@ -21,7 +21,7 @@ The package knows options:
 
 - newVec (default): use bold italic letters for vectors.
 
-- oldVec:do not change standard LaTeX \vec definition.
+- oldVec: do not change standard LaTeX \vec definition.
 
 Commands
 ========
