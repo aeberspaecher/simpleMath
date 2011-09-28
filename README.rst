@@ -6,8 +6,8 @@ About
 =====
 
 simpleMath is a LaTeX package that provides convenient math
-functions for Physicists. Eg., ``\ket{a}``s gives |a> with nicely sized
-bra-kets.
+functions for Physicists. Eg., ``\ket{a}`` gives ``|a>`` with nicely
+sized bra-kets.
 
 Usage
 =====
@@ -19,7 +19,7 @@ Options
 
 The package knows options:
 
-- Euler: use Euler font for i and e (provided by the commands `` \ii``
+- Euler: use Euler font for i and e (provided by the commands ``\ii``
   and ``\ee``)
 
 - noEuler (default): use roman e, i.
