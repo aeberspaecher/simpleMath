@@ -3,6 +3,7 @@
 \RequirePackage{amsmath, amsfonts, amssymb}
 \RequirePackage{bm}
 \RequirePackage{bbm}
+\RequirePackage{tikz}
 
 % New font: Euler; Neuer Font: Euler.
 \DeclareMathAlphabet\matheuler{U}{eur}{m}{n} % Neues Mathealphabet Euler festlegen
@@ -18,6 +19,16 @@
 \DeclareOption{oldVec}{
 \renewcommand{\vec}[1]{{\ensuremath{\oldvec{#1}}}}} % Normale Vektoren; ordinary vectors
 
+% option round/square brackets:
+\DeclareOption{round}{
+\newcommand{\lparan}{\left(}
+\newcommand{\rparan}{\right)}}
+
+\DeclareOption{square}{
+\newcommand{\lparan}{\left[}
+\newcommand{\rparan}{\right]}}
+
+
 % options for e and i:
 \DeclareOption{Euler}{
 % e und i in Euler font
@@ -26,15 +37,13 @@
 \newcommand{\ii}{\ensuremath{\matheuler{i}}}} % Euler Roman "i" als imaginäre Einheit.; Euler Roman imaginary unit "i"
 
 \DeclareOption{noEuler}{
-% e und i in Euler font
-% e and i in Euler font
-% Kommentar entfernen, wenn gewünscht; remove comment if wanted
- %e und i in normalem Roman
+% e und i in roman font
+% e and i in roman font
 \newcommand{\ee}{\ensuremath{\mathrm{e}}} %  Roman "e" als Euler-Zahl; Roman "e" as Euler number
 \newcommand{\ii}{\ensuremath{\mathrm{i}}}} %  Roman "i" als imaginäre Einheit; Roman "i" as imaginary unit
 
 \DeclareOption*{\PackageWarning{simpleMath}{Unknown option `\CurrentOption'}}
-\ExecuteOptions{newVec,noEuler} % standard options
+\ExecuteOptions{newVec, square, noEuler} % standard options
 \ProcessOptions\relax
 
 %
@@ -55,6 +64,7 @@
 \newcommand{\Naturals}{\ensuremath{\mathbb{N}}}
 \newcommand{\Reals}{\ensuremath{\mathbb{R}}}
 \newcommand{\Complex}{\ensuremath{\mathbb{C}}}
+\newcommand{\Integers}{\ensuremath{\mathbb{Z}}}
 
 % Differentiale, Exponentialschreibweise und Diverses
 % Differentials, exponentials and misc
@@ -73,13 +83,22 @@
 \newcommand{\secondderiv}[2]{\ensuremath{\frac{{\mathrm{d}^2}\!#1}{\mathrm{d}{#2}^2}}}	% zweite Ableitung; second derivative
 \newcommand{\firstpderiv}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}} % erste partielle Ableitung; first partial derivative
 \newcommand{\secondpderiv}[2]{\ensuremath{\frac{\partial^2 #1}{\partial {#2}^2}}}	% zweite partielle Ableitung; second partial deriviative
+\newcommand{\secondmpderiv}[3]{\ensuremath{\frac{\partial^2 #1}{\partial {#2}\partial{#3}}}}	% zweite gemischte partielle Ableitung; second mixed partial deriviative
+
+% Summen und Integrale; Sums and Integrals
+\newcommand{\su}[2]{\ensuremath{\sum\limits_{#1}^{#2}}} % Summe mit gegebenen Grenzen; sum with given limits
+\newcommand{\inte}[2]{\ensuremath{\int\limits_{#1}^{#2}}} % Integral mit gegebenen Grenzen; integral with given limits
 
 % Vektoren in 3D; vectors in 3D
-\newcommand{\DreierVec}[3]{\ensuremath{\left[ \begin{array}{c} #1 \\ #2 \\ #3 \end{array} \right]}} % Vektor in R^3 mit eckigen Klammern; R^3 with square brackets
-\newcommand{\ZweierVec}[2]{\ensuremath{\left[ \begin{array}{c} #1 \\ #2 \end{array} \right]}} % Vektor in R^2 mit eckigen Klammern; R^3 with square brackets
+\newcommand{\DreierVec}[3]{\ensuremath{\lparan \begin{array}{c} #1 \\ #2 \\ #3 \end{array} \rparan}} % Vektor in R^3 mit eckigen Klammern; R^3 with square brackets
+\newcommand{\ZweierVec}[2]{\ensuremath{\lparan \begin{array}{c} #1 \\ #2 \end{array} \rparan}} % Vektor in R^2 mit eckigen Klammern; R^3 with square brackets
 \let\oldnabla=\nabla % Nabla fett machen Vorbereitung - ACHTUNG, UNSCHÖN!; prepare bold Nabla
 \renewcommand{\nabla}{\ensuremath{\mbox{\boldmath$\oldnabla$}}} % Nabla fett machen; bold nabla
 \newcommand{\dn}{\ensuremath{\partial_{\vec{n}}}} % Normalableitung d_n; normal derivative d_n
+
+% Matrices
+\newcommand{\twoMatrix}[4]{\ensuremath{\lparan \begin{array}{cc} #1 & #2 \\ #3 & #4 \end{array} \rparan}} % 2x2 matrix
+\newcommand{\threeMatrix}[9]{\ensuremath{\lparan \begin{array}{ccc} #1 & #2 & #3 \\ #4 & #5 & #6\\ #7 & #8 & #9 \end{array} \rparan}} % 3x3 matrix
 
 % Quantentheorie, Diracs bras and kets
 % Quantum theory, Dirac bra and ket vectors
@@ -133,3 +152,5 @@
 % normal text:
 \newcommand{\monospace}[1]{{\texttt{#1}}} % monospace font
 
+% text decoration:
+\newcommand{\circleText}[1]{\tikz {\node[draw,circle, inner sep=0.2pt,, minimum size=4mm] {#1};}}
