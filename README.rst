@@ -28,6 +28,12 @@ The package knows options:
 
 - oldVec: do not change standard LaTeX ``\vec`` definition.
 
+- square: use square brackets in vector and matrix convenience commands such
+  as ``\twoMatrix``.
+
+- round: use round brackets in vector and matrix convenience commands such as
+  ``\DreierVec``.
+
 Commands
 ========
 
