@@ -17,22 +17,17 @@ Just include ``\usepackage{simpleMath}`` in your document's head.
 Options
 =======
 
-The package knows options:
+The package knows switch-like options:
 
 - Euler: use Euler font for i and e (provided by the commands ``\ii``
-  and ``\ee``)
+  and ``\ee``). By default, Roman font is used.
 
-- noEuler (default): use roman e, i.
-
-- newVec (default): use bold italic letters for vectors.
-
-- oldVec: do not change standard LaTeX ``\vec`` definition.
-
-- square: use square brackets in vector and matrix convenience commands such
-  as ``\twoMatrix``.
+- oldVec: do not change standard LaTeX ``\vec`` definition. By default, bold
+  italic letters are used for vectors.
 
 - round: use round brackets in vector and matrix convenience commands such as
-  ``\DreierVec``.
+  ``\DreierVec``. By default, square brackets are used in vector and matrix
+  convenience commands such as ``\twoMatrix``.
 
 Commands
 ========
