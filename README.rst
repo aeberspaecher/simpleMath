@@ -1,18 +1,18 @@
-==========
-simpleMath
-==========
+===========
+simple_math
+===========
 
 About
 =====
 
-simpleMath is a LaTeX package that provides convenient math
+simple_math is a LaTeX package that provides convenient math
 functions for Physicists. Eg., ``\ket{a}`` gives ``|a>`` with nicely
 sized bra-kets.
 
 Usage
 =====
 
-Just include ``\usepackage{simpleMath}`` in your document's head.
+Just include ``\usepackage{simple_math}`` in your document's head.
 
 Options
 =======
