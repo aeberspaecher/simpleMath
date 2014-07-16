@@ -1,11 +1,11 @@
-\ProvidesPackage{simpleMath}
+\ProvidesPackage{simple_math}
 
 %-----------------------------------------------------------------------
 % Math convenience package.
 %
 % Defines a lot of new commands.
 % There are three options that may be given to the package:
-% - round: use round instead of square paranthesis in vector and matrix commands
+% - round: use round instead of square parenthesis in vector and matrix commands
 % - oldvec: use vectors with an arrow ob top instead of bold italic letters
 % - Euler: use the Euler font for Euler's number e and the imaginary unit i
 %          (instead of Roman font)
@@ -123,10 +123,14 @@
 \let\oldnabla=\nabla % Nabla fett machen Vorbereitung - ACHTUNG, UNSCHÖN!; prepare bold Nabla
 \renewcommand{\nabla}{\ensuremath{\mbox{\boldmath$\oldnabla$}}} % Nabla fett machen; bold nabla
 \newcommand{\dn}{\ensuremath{\partial_{\vec{n}}}} % Normalableitung d_n; normal derivative d_n
+\newcommand{\transp}{\ensuremath{\mathrm{T}}}
+\newcommand{\herm}{\ensuremath{\mathrm{H}}}
 
 % Matrices
+\newcommand{\mat}[1]{\ensuremath{\mathbf{#1}}}
 \newcommand{\twoMatrix}[4]{\ensuremath{\lparan \begin{array}{cc} #1 & #2 \\ #3 & #4 \end{array} \rparan}} % 2x2 matrix
 \newcommand{\threeMatrix}[9]{\ensuremath{\lparan \begin{array}{ccc} #1 & #2 & #3 \\ #4 & #5 & #6\\ #7 & #8 & #9 \end{array} \rparan}} % 3x3 matrix
+\newcommand{\eye}{\ensuremath{\mat{I}}}
 
 % Quantentheorie, Diracs bras and kets
 % Quantum theory, Dirac bra and ket vectors
@@ -176,6 +180,13 @@
 \newcommand{\inside}{\ensuremath{\mathrm{in}}} % in in roman
 \newcommand{\outside}{\ensuremath{\mathrm{out}}} % out in roman
 \newcommand{\res}{\ensuremath{\mathrm{res}}} % res in roman
+\newcommand{\cond}{\ensuremath{\mathrm{cond}}} % condition number, 'cond'
+\newcommand{\kres}{\ensuremath{k_{\mathrm{res}}}} % resonant wavenumber k_res
+
+% misc shortcuts:
+\newcommand{\hankelone}[1]{\ensuremath{H^{(1)}_{#1}}}  % Hankel function of first order
+\newcommand{\mmax}{\ensuremath{m_{\mathrm{max}}}}
+\newcommand{\pymcav}{\monospace{pymcav}}
 
 % normal text:
 \newcommand{\monospace}[1]{{\texttt{#1}}} % monospace font
